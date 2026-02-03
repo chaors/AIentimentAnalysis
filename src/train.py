@@ -125,6 +125,6 @@ if __name__ == '__main__':
                 best_val_acc = val_acc
                 torch.save(model.state_dict(),"../params/best_bert.pth")
                 print(f"EPOCH:{epoch}:保存最优参数：acc{best_val_acc}")
-        #保存最后一轮参数
+        #保存最后一轮参数，为什么还要保存last？当发生意外中断时，会选择last_bert做断点续训练；保证训练过程可回溯、可恢复
         torch.save(model.state_dict(), "../params/last_bert.pth")
         print(f"EPOCH:{epoch}:最后一轮参数保存成功！")
