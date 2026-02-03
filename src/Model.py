@@ -7,9 +7,9 @@ print(DEVICE)
 
 #加载预训练模型
 pretrained = BertModel.from_pretrained(r"/Users/chaors/Development/AIProjects/AIentimentAnalysis/model/bert-base-chinese/models--bert-base-chinese/snapshots/8f23c25b06e129b6c986331a13d8d025a92cf0ea").to(DEVICE)
-print(pretrained)
-#
-#定义下游任务（增量模型）“冻结基座+训练顶层"的模式
+# print(pretrained)
+
+# 定义下游任务（增量模型）“冻结基座+训练顶层"的模式
 class Model(torch.nn.Module):
     def __init__(self):
         super().__init__()

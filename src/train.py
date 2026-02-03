@@ -70,7 +70,7 @@ if __name__ == '__main__':
     model = Model().to(DEVICE)
     #定义优化器
     optimizer = torch.optim.AdamW(model.parameters())
-    #定义损失函数
+    #定义损失函数 通过CrossEntropyLoss计算概率分布差异来优化模型参数
     loss_func = torch.nn.CrossEntropyLoss()
 
     #初始化验证最佳准确率
